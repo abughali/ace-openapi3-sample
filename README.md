@@ -499,7 +499,6 @@ For the API response, graphical transformation through Mapping Nodes will be use
 <img alt="subflow" src="images/importing.jpeg" />
 
 ## Try It!
-git 
 
 To be able to test our newly created API using **Try It** capability in Integration Server Web UI, we must uncomment and set the following parameters in **server.conf.yaml** configuration file of our Integration Server we are deploying to.
 
