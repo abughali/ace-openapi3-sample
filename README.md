@@ -1,5 +1,5 @@
 # OpenAPI 3.0 in IBM App Connect Enterprise (ACE)
----
+
 API developers have been using Swagger 2.0 spec to define APIs over past few years. Later it has been donated to Linux Foundation and named as Open API specification and a new Swagger spec was released with lots of new features and improvements as Open API Specifications (OAS) 3.0.
 
 OpenAPI 3.0 support was introduced in ACE Toolkit V12.0.1.0 and [enhanced](https://www.ibm.com/docs/en/app-connect/12.0?topic=wniv1-new-function-added-in-version-120-subsequent-modification-fix-packs#v12010__restapi) in V12.0.3.0. This means that developers can now:
@@ -8,7 +8,7 @@ OpenAPI 3.0 support was introduced in ACE Toolkit V12.0.1.0 and [enhanced](https
 * Build (create from scracth or implement using an existing definition) a REST API in OpenAPI 3.0 format
 
 ## Overview
----
+
 This sample ACE project utilizes [The Weather Company (TWC)](https://www.ibm.com/products/environmental-intelligence-suite/data-packages) API. Specifically, we will use [Daily Forecast](https://app.swaggerhub.com/apis/WAWX-SUN/daily-forecast_api_2/3.0) API. Therefore, obtaining an API Key is necassary.
 
 For the purpose of demonstrating the different capablities of ACE, we will not only consume the Daily Forecast API but we will also create a wrapper on the top of it to simplify the request and response according to our needs. The same objective can be acheived using [GraphQL proxy API](https://www.ibm.com/docs/en/api-connect/10.0.x?topic=definition-creating-graphql-proxy-api) in API Connect.
@@ -23,7 +23,7 @@ ACE (formerly known as IBM Integration Bus or IIB) supplies built-in nodes that 
 <img alt="subflow" src="images/subflow.jpeg" />
 
 ## Implementation Details
----
+
 The Daily Forecast API documentation can be found [here](https://ibm.co/V3DFap). It accepts different URL constructs but we will use **Request by Postal Key** construct which requires the following parameters: postalKey, units, language, format, apiKey.
 
 The table below describes full usage of the API call (GET with Query String)
@@ -45,7 +45,7 @@ The table below describes full usage of the API call (GET with Query String)
 > `https://api.weather.com/v3/wx/forecast/daily/3day?postalKey=L5R:CA&units=m&language=en-US&format=json&apiKey=yourApiKey`
 
 
-Basically, our subflow (which implements our created REST API) will accepts one input only, namely postalCode as Query Parameter and hardcode the other values (country code, units, format, and language). This is acheived through Compute Node and RESTRequest Node.
+Basically, our subflow (which implements our created REST API) will accept one input only, namely postalCode as Query Parameter and hardcode the other values (country code, units, format, and language). This is acheived through Compute Node and RESTRequest Node.
 
 
 
@@ -490,7 +490,7 @@ For the API response, graphical transformation through Mapping Nodes will be use
 </details>
 
 ## Creating the Project
----
+
 
 1. Open your App Connect Enterprise Toolkit.
 2. In the Workspace Launcher window, choose the workspace ~/IBM/ACET11/workspace/ace-openapi3-sample. Click OK.
@@ -499,7 +499,7 @@ For the API response, graphical transformation through Mapping Nodes will be use
 <img alt="subflow" src="images/importing.jpeg" />
 
 ## Try It!
----
+git 
 
 To be able to test our newly created API using **Try It** capability in Integration Server Web UI, we must uncomment and set the following parameters in **server.conf.yaml** configuration file of our Integration Server we are deploying to.
 
